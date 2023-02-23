@@ -32,6 +32,10 @@
 	title = "Psychoanalyst"
 	title_blurb =  "A Psychoanalyst provides mental health services to crew members in need, focusing more on therapy than medication. They may also be \
 					called upon to determine whatever ails the mentally unwell, frequently under Security supervision."
+	background_allow = list(
+		/datum/lore/character_background/faction/veymed,
+		/datum/lore/character_background/faction/nanotrasen
+	)
 
 /datum/prototype/alt_title/counselor
 	title = "Counselor"

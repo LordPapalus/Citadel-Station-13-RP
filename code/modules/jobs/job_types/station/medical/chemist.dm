@@ -26,7 +26,9 @@
 /datum/prototype/alt_title/biochemist
 	title = "Biochemist"
 	background_allow = list(
-		/datum/lore/character_background/faction/onkhera_necropolis
+		/datum/lore/character_background/faction/onkhera_necropolis,
+		/datum/lore/character_background/faction/veymed,
+		/datum/lore/character_background/faction/zenghu
 	)
 	background_enforce = TRUE
 

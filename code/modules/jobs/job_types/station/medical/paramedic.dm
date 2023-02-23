@@ -25,7 +25,8 @@
 	title = "Biotechnical Responder"
 	title_outfit = /datum/outfit/job/station/paramedic/emt  //TODO: add OSSNECRO outfits.
 	background_allow = list(
-		/datum/lore/character_background/faction/onkhera_necropolis
+		/datum/lore/character_background/faction/onkhera_necropolis,
+		/datum/lore/character_background/faction/veymed
 	)
 	background_enforce = TRUE
 
