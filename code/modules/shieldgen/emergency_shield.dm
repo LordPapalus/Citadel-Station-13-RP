@@ -43,7 +43,7 @@
 	if(!istype(W)) return
 
 	//Calculate damage
-	var/aforce = W.force
+	var/aforce = W.damage_force
 	if(W.damtype == BRUTE || W.damtype == BURN)
 		src.health -= aforce
 
@@ -56,7 +56,7 @@
 
 	..()
 
-/obj/machinery/shield/bullet_act(var/obj/item/projectile/Proj)
+/obj/machinery/shield/bullet_act(var/obj/projectile/Proj)
 	health -= Proj.get_structure_damage()
 	..()
 	check_failure()
@@ -250,7 +250,7 @@
 				malfunction = 1
 	checkhp()
 
-/obj/machinery/shieldgen/attack_hand(mob/user as mob)
+/obj/machinery/shieldgen/attack_hand(mob/user, list/params)
 	if(locked)
 		to_chat(user, "The machine is locked, you are unable to use it.")
 		return

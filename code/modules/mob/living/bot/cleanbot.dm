@@ -140,7 +140,7 @@
 	else
 		icon_state = "cleanbot[on]"
 
-/mob/living/bot/cleanbot/attack_hand(var/mob/user)
+/mob/living/bot/cleanbot/attack_hand(mob/user, list/params)
 	ui_interact(user)
 
 /mob/living/bot/cleanbot/ui_interact(mob/user, datum/tgui/ui)
@@ -227,7 +227,7 @@
 	name = "proxy bucket"
 	icon = 'icons/obj/aibots.dmi'
 	icon_state = "bucket_proxy"
-	force = 3.0
+	damage_force = 3.0
 	throw_force = 10.0
 	throw_speed = 2
 	throw_range = 5

@@ -27,7 +27,7 @@ var/prison_shuttle_timeleft = 0
 /obj/machinery/computer/prison_shuttle/attack_ai(var/mob/user as mob)
 	return src.attack_hand(user)
 
-/obj/machinery/computer/prison_shuttle/attack_hand(var/mob/user as mob)
+/obj/machinery/computer/prison_shuttle/attack_hand(mob/user, list/params)
 	if(!src.allowed(user) && (!hacked))
 		to_chat(user, "<span class='warning'>Access Denied.</span>")
 		return
@@ -164,7 +164,7 @@ var/prison_shuttle_timeleft = 0
 				var/turf/D = locate(T.x, throwy - 1, 1)
 							//var/turf/E = get_step(D, SOUTH)
 				for(var/atom/movable/AM as mob|obj in T)
-					AM.Move(D)
+					AM.abstract_move(D)
 				if(istype(T, /turf/simulated))
 					qdel(T)
 			start_location.move_contents_to(end_location)
@@ -194,7 +194,7 @@ var/prison_shuttle_timeleft = 0
 				var/turf/D = locate(T.x, throwy - 1, 1)
 							//var/turf/E = get_step(D, SOUTH)
 				for(var/atom/movable/AM as mob|obj in T)
-					AM.Move(D)
+					AM.abstract_move(D)
 				if(istype(T, /turf/simulated))
 					qdel(T)
 

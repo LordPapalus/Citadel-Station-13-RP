@@ -16,9 +16,9 @@
 
 	outfit_type = /datum/outfit/job/station/botanist/gardener
 	desc = "A Botanist grows plants for the Chef and Bartender."
-	alt_titles = list("Gardener" = /datum/prototype/alt_title/gardener)
+	alt_titles = list("Gardener" = /datum/prototype/struct/alt_title/gardener)
 
-/datum/prototype/alt_title/gardener
+/datum/prototype/struct/alt_title/gardener
 	title = "Gardener"
 	title_blurb = "A Gardener may be less professional than their counterparts, and are more likely to tend to the public gardens if they aren't needed elsewhere."
 
@@ -31,7 +31,6 @@
 	uniform = /obj/item/clothing/under/rank/hydroponics
 	suit = /obj/item/clothing/suit/storage/apron
 	suit_store = /obj/item/analyzer/plant_analyzer
-	belt = /obj/item/pda/botanist
 	gloves = /obj/item/clothing/gloves/botanic_leather
 
 	backpack = /obj/item/storage/backpack/hydroponics

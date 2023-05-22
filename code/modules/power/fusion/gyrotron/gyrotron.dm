@@ -23,7 +23,6 @@ var/list/gyrotrons = list()
 /obj/machinery/power/emitter/gyrotron/Initialize(mapload)
 	gyrotrons += src
 	active_power_usage = mega_energy * 50000
-	default_apply_parts()
 	. = ..()
 
 /obj/machinery/power/emitter/gyrotron/Destroy()
@@ -41,7 +40,7 @@ var/list/gyrotrons = list()
 	return rate * 10
 
 /obj/machinery/power/emitter/gyrotron/get_emitter_beam()
-	var/obj/item/projectile/beam/emitter/E = ..()
+	var/obj/projectile/beam/emitter/E = ..()
 	E.damage = mega_energy * 50
 	return E
 

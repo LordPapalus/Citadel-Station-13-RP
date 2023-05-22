@@ -138,7 +138,10 @@ GLOBAL_LIST_INIT(default_medbay_channels, list(
 			radio_controller.remove_object(src, radiochannels[ch_name])
 	return ..()
 
-/obj/item/radio/attack_self(mob/user as mob)
+/obj/item/radio/attack_self(mob/user)
+	. = ..()
+	if(.)
+		return
 	user.set_machine(src)
 	interact(user)
 
@@ -296,6 +299,8 @@ GLOBAL_LIST_INIT(default_medbay_channels, list(
 		return UI_CLOSE
 	return ..()
 
+GLOBAL_DATUM_INIT(virtual_announcer_ai, /mob/living/silicon/ai/announcer, new(null, null, null, 1))
+
 /obj/item/radio/proc/autosay(var/message, var/from, var/channel, list/zlevels = list(0)) //BS12 EDIT
 	var/datum/radio_frequency/connection = null
 	if(channel && channels && channels.len > 0)
@@ -309,7 +314,7 @@ GLOBAL_LIST_INIT(default_medbay_channels, list(
 	if (!istype(connection))
 		return
 
-	var/static/mob/living/silicon/ai/announcer/A = new /mob/living/silicon/ai/announcer(null, null, null, 1)
+	var/mob/living/silicon/ai/announcer/A = GLOB.virtual_announcer_ai
 	A.SetName(from)
 	Broadcast_Message(connection, A,
 						0, "*garbled automated announcement*", src,
@@ -786,7 +791,7 @@ GLOBAL_LIST_INIT(default_medbay_channels, list(
 	icon_state = "radiopack"
 	item_state = "radiopack"
 	slot_flags = SLOT_BACK
-	force = 5
+	damage_force = 5
 	throw_force = 6
 	preserve_item = 1
 	w_class = ITEMSIZE_LARGE
@@ -805,7 +810,7 @@ GLOBAL_LIST_INIT(default_medbay_channels, list(
 /obj/item/bluespace_radio/ui_action_click()
 	toggle_handset()
 
-/obj/item/bluespace_radio/attack_hand(mob/user)
+/obj/item/bluespace_radio/attack_hand(mob/user, list/params)
 	if(loc == user)
 		toggle_handset()
 	else

@@ -258,10 +258,15 @@
 
 /datum/gear/suit/pariah
 	name = "springtime pariah moto jacket"
-	path = /obj/item/clothing/suit/storage/hooded/pariah
+	path = /obj/item/clothing/suit/storage/toggle/heated/pariah
 	ckeywhitelist = list("rezbit")
 
 /datum/gear/suit/mindelectric
 	name = "「 The Mind Electric 」"
 	path = /obj/item/clothing/suit/storage/mindelectric
 	ckeywhitelist = list("lectronyx")
+
+/datum/gear/donator/tajcigarcase
+	name = "S'rendarr's Hand case"
+	path = /obj/item/storage/fancy/cigar/taj
+	ckeywhitelist = list("vailthewolf")

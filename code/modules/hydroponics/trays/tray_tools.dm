@@ -15,7 +15,7 @@
 	desc = "An old pair of trimmers with a pretty dull blade. You would probably have a hard time cutting anything but plants with it."
 	icon_state = "hedget"
 	item_state = "hedget"
-	force = 7 //One point extra than standard wire cutters.
+	damage_force = 7 //One point extra than standard wire cutters.
 
 /obj/item/analyzer/plant_analyzer
 	name = "plant analyzer"
@@ -26,6 +26,9 @@
 	var/list/last_reagents
 
 /obj/item/analyzer/plant_analyzer/attack_self(mob/user)
+	. = ..()
+	if(.)
+		return
 	ui_interact(user)
 
 /obj/item/analyzer/plant_analyzer/ui_interact(mob/user, datum/tgui/ui)

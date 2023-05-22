@@ -16,14 +16,14 @@
 	if(active)
 		edge = 1
 		sharp = 1
-		..() //Updates force.
-		throw_force = max(3,force-3)
+		..() //Updates damage_force.
+		throw_force = max(3,damage_force-3)
 		hitsound = 'sound/weapons/bladeslice.ogg'
 		icon_state += "_open"
 		w_class = ITEMSIZE_NORMAL
 		attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	else
-		force = 3
+		damage_force = 3
 		edge = 0
 		sharp = 0
 		hitsound = initial(hitsound)
@@ -56,6 +56,9 @@
 	thrown_force_divisor = 0.2 // 4 when thrown with weight 20 (steel)
 
 /obj/item/material/butterfly/attack_self(mob/user)
+	. = ..()
+	if(.)
+		return
 	active = !active
 	if(active)
 		to_chat(user, "<span class='notice'>You flip out \the [src].</span>")
@@ -72,7 +75,7 @@
 	name = "kitchen knife"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "knife"
-	desc = "A general purpose chef's knife. Glithari Exports filet knives, Centauri bread knives, all pale in comparison to NanoTrasen's very own Cookware line of cheap, affordable chef's knives." 
+	desc = "A general purpose chef's knife. Glithari Exports filet knives, Centauri bread knives, all pale in comparison to NanoTrasen's very own Cookware line of cheap, affordable chef's knives."
 	sharp = 1
 	edge = 1
 	force_divisor = 0.15 // 9 when wielded with hardness 60 (steel)
@@ -181,11 +184,11 @@
 		return TRUE
 	return FALSE
 
-/obj/item/material/knife/machete/armblade/rig
+/obj/item/material/knife/machete/armblade/hardsuit
 	default_material = MAT_STEEL
-	var/obj/item/rig_module/armblade/storing_module
+	var/obj/item/hardsuit_module/armblade/storing_module
 
-/obj/item/material/knife/machete/armblade/rig/dropped(mob/user, flags, atom/newLoc)
+/obj/item/material/knife/machete/armblade/hardsuit/dropped(mob/user, flags, atom/newLoc)
 	. = ..()
 	if(storing_module)
 		src.forceMove(storing_module)

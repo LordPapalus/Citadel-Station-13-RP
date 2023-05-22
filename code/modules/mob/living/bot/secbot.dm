@@ -162,7 +162,7 @@
 
 	return data
 
-/mob/living/bot/secbot/attack_hand(var/mob/user)
+/mob/living/bot/secbot/attack_hand(mob/user, list/params)
 	ui_interact(user)
 
 /mob/living/bot/secbot/ui_act(action, list/params, datum/tgui/ui)
@@ -225,7 +225,7 @@
 	if(health < curhealth && on == TRUE)
 		react_to_attack(user)
 
-/mob/living/bot/secbot/bullet_act(var/obj/item/projectile/P)
+/mob/living/bot/secbot/bullet_act(var/obj/projectile/P)
 	var/curhealth = health
 	var/mob/shooter = P.firer
 	. = ..()
@@ -380,7 +380,7 @@
 			if(do_mob(src, H, 60))
 				if(!H.handcuffed)
 					var/type
-					if(istype(H.back, /obj/item/rig) && istype(H.gloves,/obj/item/clothing/gloves/gauntlets/rig))
+					if(istype(H.back, /obj/item/hardsuit) && istype(H.gloves,/obj/item/clothing/gloves/gauntlets/hardsuit))
 						type = /obj/item/handcuffs/cable // Better to be cable cuffed than stun-locked
 					else
 						type = /obj/item/handcuffs

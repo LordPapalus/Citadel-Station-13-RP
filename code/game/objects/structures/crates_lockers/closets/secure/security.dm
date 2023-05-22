@@ -160,6 +160,7 @@
 		/obj/item/clothing/head/helmet/HoS/hat,
 		/obj/item/clothing/head/beret/sec/corporate/hos,
 		/obj/item/clothing/suit/storage/vest/hos,
+		/obj/item/clothing/accessory/poncho/roles/cloak/hos,
 		/obj/item/clothing/under/rank/head_of_security/jensen,
 		/obj/item/clothing/under/rank/head_of_security/corp,
 		/obj/item/clothing/under/rank/head_of_security/skirt_pleated,
@@ -208,6 +209,52 @@
 		/obj/item/melee/telebaton,
 		/obj/item/gps/security/hos,
 		/obj/item/flashlight/maglight)
+
+/obj/structure/closet/secure_closet/blueshield
+	name = "blueshield's locker"
+	icon_state = "secC1"
+	icon_closed = "secC"
+	icon_locked = "secC1"
+	icon_opened = "secCopen"
+	icon_broken = "secCbroken"
+	icon_off = "secCoff"
+	req_access = list(ACCESS_COMMAND_BLUESHIELD)
+	storage_capacity = 2.5 * MOB_MEDIUM
+
+	starts_with = list(
+		/obj/item/disk/nifsoft/blueshield,
+		/obj/item/radio/headset/heads/blueshield,
+		/obj/item/radio/headset/heads/blueshield/alt,
+		/obj/item/clothing/glasses/sunglasses/medhud,
+		/obj/item/clothing/head/beret/sec/corporate/blueshield,
+		/obj/item/clothing/under/oricon/utility/sysguard/crew/blueshield,
+		/obj/item/clothing/gloves/black,
+		/obj/item/clothing/shoes/boots/jackboots,
+		/obj/item/clothing/suit/armor/pcarrier/light/ntbs,
+		/obj/item/gunbox/carrier/blueshield,
+		/obj/item/storage/backpack/blueshield,
+		/obj/item/storage/belt/security,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/flash,
+		/obj/item/gun/ballistic/revolver/consul,
+		/obj/item/ammo_magazine/s44,
+		/obj/item/ammo_magazine/s44,
+		/obj/item/ammo_magazine/s44,
+		/obj/item/ammo_magazine/s44,
+		/obj/item/ammo_magazine/s44/rubber,
+		/obj/item/ammo_magazine/s44/rubber,
+		/obj/item/ammo_magazine/s44/rubber,
+		/obj/item/ammo_magazine/s44/empty,
+		/obj/item/melee/telebaton,
+
+		/obj/item/gps/command/blueshield,
+		/obj/item/tank/oxygen,
+		/obj/item/clothing/mask/gas/half,
+		/obj/item/clothing/accessory/badge/holo,
+		/obj/item/clothing/accessory/badge/holo/cord,
+		/obj/item/tool/crowbar/red,
+		/obj/item/flashlight/maglight,
+		/obj/item/cartridge/security)
 
 /obj/structure/closet/secure_closet/warden
 	name = "warden's locker"
@@ -272,8 +319,6 @@
 	req_access = list(ACCESS_SECURITY_BRIG)
 
 	starts_with = list(
-		/obj/item/clothing/suit/storage/vest/officer,
-		/obj/item/clothing/head/helmet,
 		/obj/item/cartridge/security,
 		/obj/item/radio/headset/headset_sec,
 		/obj/item/radio/headset/headset_sec/alt,
@@ -289,7 +334,7 @@
 		/obj/item/clothing/accessory/storage/black_vest,
 		/obj/item/clothing/head/soft/sec/corp,
 		/obj/item/clothing/under/rank/security/corp,
-		/obj/item/gun/energy/taser,
+		/obj/item/gun/energy/secutor,
 		/obj/item/cell/device/weapon,
 		/obj/item/gps/security,
 		/obj/item/clothing/under/bodysuit/bodysuitsec,
@@ -454,7 +499,7 @@ GLOBAL_LIST_BOILERPLATE(all_brig_closets, /obj/structure/closet/secure_closet/br
 	icon_locked = "secC1"
 	icon_opened = "secCopen"
 	icon_broken = "secCbroken"
-	icon_off = "seCcoff"
+	icon_off = "secCoff"
 	req_access = list(ACCESS_SECURITY_BRIG)
 	storage_capacity = 3.5 * MOB_MEDIUM
 
@@ -475,7 +520,7 @@ GLOBAL_LIST_BOILERPLATE(all_brig_closets, /obj/structure/closet/secure_closet/br
 		/obj/item/hailer,
 		/obj/item/flashlight/flare,
 		/obj/item/clothing/accessory/storage/black_vest,
-		/obj/item/gun/energy/taser,
+		/obj/item/gun/energy/secutor,
 		/obj/item/cell/device/weapon,
 		/obj/item/flashlight/maglight,
 		/obj/item/clothing/head/soft/nanotrasen,
@@ -502,7 +547,7 @@ GLOBAL_LIST_BOILERPLATE(all_brig_closets, /obj/structure/closet/secure_closet/br
 	icon_locked = "secC1"
 	icon_opened = "secCopen"
 	icon_broken = "secCbroken"
-	icon_off = "seCcoff"
+	icon_off = "secCoff"
 	req_access = list(ACCESS_SECURITY_BRIG)
 	storage_capacity = 3.5 * MOB_MEDIUM
 
@@ -556,7 +601,7 @@ GLOBAL_LIST_BOILERPLATE(all_brig_closets, /obj/structure/closet/secure_closet/br
 	icon_locked = "secC1"
 	icon_opened = "secCopen"
 	icon_broken = "secCbroken"
-	icon_off = "seCcoff"
+	icon_off = "secCoff"
 	req_access = list(ACCESS_SECURITY_BRIG)
 	storage_capacity = 3.5 * MOB_MEDIUM
 

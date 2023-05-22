@@ -216,12 +216,16 @@
 	path = /obj/item/clothing/shoes/boots/laconic
 
 /datum/gear/shoes/bountyskin
-	name = "Bounty Hunter's Heels"
+	name = "Bounty Hunters Heels"
 	path = /obj/item/clothing/shoes/bountyskin
 
 /datum/gear/shoes/antediluvian
 	name = "Antediluvian Legwraps"
 	path = /obj/item/clothing/shoes/antediluvian
+
+/datum/gear/shoes/antediluvian
+	name = "Antediluvian Heels"
+	path = /obj/item/clothing/shoes/antediluvian/heels
 
 /datum/gear/shoes/halfmoon
 	name = "Half Moon boots"
@@ -243,3 +247,11 @@
 /datum/gear/shoes/duty_alt/heel
 	name = "Duty Boots (Alternate), Heels"
 	path = /obj/item/clothing/shoes/boots/duty/alt/heel
+
+/datum/gear/shoes/ballet
+	name = "Antheia Pointe Shoes"
+	path = /obj/item/clothing/shoes/ballet
+
+/datum/gear/shoes/ballet/New()
+	..()
+	gear_tweaks += gear_tweak_free_color_choice

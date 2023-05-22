@@ -138,7 +138,6 @@
 		var/obj/item/integrated_circuit/IC = I
 		/* Uncomment for debugging purposes. */
 		if(!IC)
-			TO_WORLD(SPAN_DEBUGERROR("Bad assembly_components entry in [src].  Has remove() been called incorrectly?"))
 			var/x = assembly_components.Find(null)
 			assembly_components.Cut(x,++x)
 			return
@@ -514,6 +513,9 @@
 	return ..()
 
 /obj/item/electronic_assembly/attack_self(mob/user)
+	. = ..()
+	if(.)
+		return
 	if(!check_interactivity(user))
 		return
 	ui_interact(user)
